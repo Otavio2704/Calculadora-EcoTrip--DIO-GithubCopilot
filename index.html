@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de emissões de CO₂ para diferentes meios de transporte">
+    <title>Calculadora de Emissões de CO₂</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🌍 Calculadora de CO₂</h1>
+            <p class="subtitle">Calcule as emissões de carbono da sua viagem</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Seção de Seleção de Rota -->
+            <section class="card route-section">
+                <h2>📍 Selecione a Rota</h2>
+                
+                <div class="form-group">
+                    <label for="origin">Origem:</label>
+                    <select id="origin" class="form-control">
+                        <option value="">Selecione a origem</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="destination">Destino:</label>
+                    <select id="destination" class="form-control">
+                        <option value="">Selecione o destino</option>
+                    </select>
+                </div>
+
+                <div class="route-info" id="routeInfo" style="display: none;">
+                    <p><strong>Distância:</strong> <span id="routeDistance">-</span> km</p>
+                </div>
+            </section>
+
+            <!-- Seção de Seleção de Transporte -->
+            <section class="card transport-section">
+                <h2>🚗 Meio de Transporte</h2>
+                
+                <div class="transport-grid" id="transportGrid">
+                    <!-- Os botões de transporte serão inseridos via JavaScript -->
+                </div>
+
+                <div class="passengers-section" id="passengersSection" style="display: none;">
+                    <div class="form-group">
+                        <label for="passengers">Número de passageiros:</label>
+                        <input type="number" id="passengers" class="form-control" min="1" max="50" value="1">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botão de Calcular -->
+            <div class="calculate-section">
+                <button id="calculateBtn" class="btn-calculate" disabled>
+                    Calcular Emissões
+                </button>
+            </div>
+
+            <!-- Seção de Resultados -->
+            <section class="card results-section" id="resultsSection" style="display: none;">
+                <h2>📊 Resultados</h2>
+                
+                <div class="result-main">
+                    <div class="result-value">
+                        <span class="result-number" id="co2Result">0</span>
+                        <span class="result-unit">kg CO₂</span>
+                    </div>
+                    <p class="result-description" id="resultDescription"></p>
+                </div>
+
+                <div class="result-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Distância:</span>
+                        <span class="detail-value" id="resultDistance">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Transporte:</span>
+                        <span class="detail-value" id="resultTransport">-</span>
+                    </div>
+                    <div class="detail-item" id="resultPassengersDetail" style="display: none;">
+                        <span class="detail-label">Passageiros:</span>
+                        <span class="detail-value" id="resultPassengers">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Emissão por km:</span>
+                        <span class="detail-value" id="resultEmissionRate">-</span>
+                    </div>
+                </div>
+
+                <div class="comparison-section">
+                    <h3>🌳 Equivalências</h3>
+                    <div class="equivalence-grid" id="equivalenceGrid">
+                        <!-- As equivalências serão inseridas via JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Comparação -->
+            <section class="card comparison-full-section" id="comparisonSection" style="display: none;">
+                <h2>📈 Comparação Entre Transportes</h2>
+                <div class="comparison-chart" id="comparisonChart">
+                    <!-- O gráfico de comparação será inserido via JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>💡 Dados baseados em médias de emissões de CO₂ por meio de transporte</p>
+            <p class="footer-note">Desenvolvido para conscientização ambiental</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/routes-data.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
